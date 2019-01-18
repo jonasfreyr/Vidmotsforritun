@@ -1,13 +1,13 @@
-
 let old_selected = ""
 let selected = "";
 let done = false;
 let svg = document.getElementsByTagName("svg");
 
-document.onclick = function next(){
+let timer = window.setInterval(function next(){
 	old_selected = selected;
 
 	if (selected === "J"){
+		done++;
 		selected = "O"
 	}
 
@@ -25,7 +25,7 @@ document.onclick = function next(){
 
 	else if (selected === "S"){
 		selected = "J"
-		done = true;
+		
 	}
 	else if (selected === ""){
 		selected = "J"
@@ -33,7 +33,7 @@ document.onclick = function next(){
 	
 
 	transition();
-}
+}, 1000);
 
 let stafir = {
 	"J": {"dom":document.getElementById("J"), "pos":{x:195, y: 0}},
@@ -44,21 +44,17 @@ let stafir = {
 }
 
 function transition(){
-	if (old_selected !== "") {
+	if (old_selected !== "" && done !== 2) {
 		TweenMax.to(stafir[old_selected]["dom"], 1, {x:-195, y: 0});
 	}
 
-	if(selected !== "done"){
+	if(done !== 2){
 		TweenMax.to(stafir[selected]["dom"], 1, stafir[selected]["pos"]);
 	}
-	if(done == true){
+	if(done == 2){
 		TweenMax.to(document.getElementById("nafn"), 1, {fill:"black"});
 		TweenMax.to(document.getElementById("snafn"), 1, {fill:"black"});
-
+		window.clearTimeout(timer);
 	}
 
 }
-
-
-
-
