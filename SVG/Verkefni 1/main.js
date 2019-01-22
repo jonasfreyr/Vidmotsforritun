@@ -1,9 +1,11 @@
+let litir = ["#FE00FF", "#E8005C", "#FF1000", "#E83800", "#FF6B00", "#E88A00", "#FFB700", "#E8C300", "#FFF600", "#A1E800", "#44FF00", "#00E81E", "#00FF79", "#00E8BE", "#00D7FF", "#0079E8", "#0033FF", "#1E00E8", "#7600FF", "#B900E8", "#FF00C2"]
 let old_selected = ""
 let selected = "";
 let done = false;
-let svg = document.getElementsByTagName("svg");
+let timer = 2000;
+let tel = 0;
 
-let timer = window.setInterval(function next(){
+let ani = window.setInterval(function next(){
 	old_selected = selected;
 
 	if (selected === "J"){
@@ -54,7 +56,21 @@ function transition(){
 	if(done == 2){
 		TweenMax.to(document.getElementById("nafn"), 1, {fill:"black"});
 		TweenMax.to(document.getElementById("snafn"), 1, {fill:"black"});
-		window.clearTimeout(timer);
+		window.clearTimeout(ani);
+		window.setInterval(change, timer);
+	}
+
+}
+
+function change(){
+	let litur = litir[Math.floor(Math.random() * litir.length)];
+	TweenMax.to(document.getElementById("c"), timer/1000, {fill: litur})
+	TweenMax.to(document.getElementById("nafn"), timer/1000, {fill: litur});
+	TweenMax.to(document.getElementById("snafn"), timer/1000, {fill: litur});
+	tel++
+
+	if(tel === litir.length){
+		tel = 0
 	}
 
 }
