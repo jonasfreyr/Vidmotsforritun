@@ -3,7 +3,20 @@ let old_selected = ""
 let selected = "";
 let done = false;
 let timer = 2000;
+let kolli_timer = 2000;
 let tel = 0;
+let kolli_tel = 1
+
+let kolli = window.setInterval(function kolli_hreyfa() {
+	if (kolli_tel % 2 == 0){
+		TweenMax.to(document.getElementById("kolli"), kolli_timer/1000, {x: 500})
+	}
+	else{
+		TweenMax.to(document.getElementById("kolli"), kolli_timer/1000, {x: 0})
+	}
+
+	kolli_tel++
+},kolli_timer);
 
 let ani = window.setInterval(function next(){
 	old_selected = selected;
@@ -64,7 +77,7 @@ function transition(){
 
 function change(){
 	let litur = litir[Math.floor(Math.random() * litir.length)];
-	TweenMax.to(document.getElementById("c"), timer/1000, {fill: litur})
+	TweenMax.to(document.getElementById("c"), timer/1000, {fill: litur});
 	TweenMax.to(document.getElementById("nafn"), timer/1000, {fill: litur});
 	TweenMax.to(document.getElementById("snafn"), timer/1000, {fill: litur});
 	tel++
