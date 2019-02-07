@@ -13,6 +13,6 @@ Notaðu skýringamynd þér til stuðnings. (2%)
 Fyrst er Vertex set (x, y, z púnktar) sem þú gerir, það er síðan sett inn í uniform bufferinn sem er notaður til að geyma það. Vertex shaderinn notar það síðan til að reikna út hvar púnktarnir eiga að vera á skjánum og setja það inn í varyings sem eru í raun bara variable inn í Vertex shadernum. Næst er Fragment shaderinn sem nær í öll gögnin úr varyings í Vertex shadernum og reiknar út litinn á öllum pixlunum inn á milli púnktana. Það er síðan geymt sem pixlar í frame buffernum sem er síðan sett inn á canvasinn.
 
 Hvað er WebGL Shaders og Graphics Library Shader Language (GLSL) og hvert er
-þeirra hlutverk. Sjá t.d. grein:
- https://webgl2fundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html (2%)
+þeirra hlutverk. Sjá t.d. grein: https://webgl2fundamentals.org/webgl/lessons/webgl-shaders-and-glsl.html (2%)
+<br>
  Shader er í rauninni bara forrit inn í leiknum sem er runað á skjákortinu síðan. Í byrjun eru bara 2 shaderar, Vertex shader og Fragment shader þar sem Vertex reiknar út staðsetningu púnktana á skjánum og Fragment shader finnur út litinn fyrir hvern pixla. GLSL eða OpenGL Shading Language er forritunarmál sem er notað til að búa til shadera. Það er sérstaklega hannað til að reikna út hluti tengda því og þess vegna er það mjög gott til að gera shadera.
