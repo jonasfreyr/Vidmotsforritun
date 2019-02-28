@@ -1,4 +1,4 @@
-### Coursera kafli 1
+### Kafli 1
 1. What is a “standalone” headset?
 * A self-contained HMD that does not require external processors or power
 
@@ -14,7 +14,7 @@
 5. What is one way AR can currently enhance social media?
 * It allows users to digitally augment and manipulate faces
 
-### Coursera kafli 2
+### Kafli 2
 1. What is a drawback of outside-in tracking?
 * Less portable
 
@@ -45,7 +45,7 @@
 10. A computer mouse is an example of a User Interface Metaphor.
 * True
 
-### Coursera kafli 3
+### Kafli 3
 1. ARCore is available in China
 * True
 
@@ -76,7 +76,7 @@
 10. Drag and drop, Voice, Tap, Pinch and Zoom, Slide, and Tilting are all examples of what?
 * Basic interaction options
   
-### Coursera kafli 4
+### Kafli 4
 1. Hit-testing
 * A & C
 
